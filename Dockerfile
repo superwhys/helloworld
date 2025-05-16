@@ -16,4 +16,6 @@ RUN cd /app && \
 FROM alpine:3.19
 
 WORKDIR /app
+COPY --from=builder /app/templates /app/templates
+COPY --from=builder /app/static /app/static
 COPY --from=builder /app/server /app/server
